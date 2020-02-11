@@ -33,7 +33,7 @@ def timeline_edit(request, pk):
             return redirect('artist_detail', {'form': form})
     else:
         form = TimelineForm(instance=timeline)
-    return render(request, 'timeline/timeline_form.html', {'form': form})
+    return render(request, 'timeline/timeline_form.html', pk=timeline.id)
 
 def timeline_delete(request, pk):
     Timeline.objects.get(id=pk).delete()
@@ -67,7 +67,7 @@ def capsule_edit(request, pk):
         form = CapsuleForm(request.POST, instance=capsule)
         if form.is_valid():
             capsule = form.save()
-            return redirect('capsule_detail', {'form': form})
+            return redirect('capsule_detail', pk=capsule.id)
     else:
         form = CapsuleForm(instance=capsule)
     return render(request, 'timeline/capsule_form.html', {'form': form})

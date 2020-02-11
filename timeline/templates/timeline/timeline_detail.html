@@ -2,6 +2,8 @@
 <h2>Timeline by {{timeline.author }}</h2>
 <ul>
   {% for capsule in timeline.time_capsules.all %}
-  <li>{{ capsule.contents }}</li>
+  <li>
+    <a href={% url 'capsule_detail' pk=capsule.pk %}> {{ capsule.contents }} </a>  
+    </li>
 </ul>
 {% endfor %} {% endblock content %}
