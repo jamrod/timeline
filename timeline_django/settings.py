@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'timeline',
-        'USER': 'timeline_user',
+        #'USER': 'timeline_user',
         'PASSWORD': 'timeline',
         'HOST': 'localhost'
     }

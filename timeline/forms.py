@@ -17,4 +17,4 @@ class CapsuleForm(forms.ModelForm):
 
     class Meta:
         model = Time_Capsule
-        fields = ('timeline', 'timestamp', 'contents',)
+        fields = ('timeline', 'contents',)

@@ -3,7 +3,7 @@
 {% block content %}
 <h2>Timelines</h2>
 <ul>
-{% for timeline in timlines %}
+{% for timeline in timelines %}
 <li>
     <a href={% url 'timeline_detail' pk=timeline.pk %}>{{ timeline.author }}</a>
 </li>

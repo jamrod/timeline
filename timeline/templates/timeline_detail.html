@@ -1,7 +1,0 @@
-{% extends 'timeline/base.html' %} {% block content %}
-<h2>Timeline by {{timeline.author }}</h2>
-<ul>
-  {% for capsule in timeline.time_capsules %}
-  <li>{{ capsule.timestamps.created_on }}</li>
-</ul>
-{% endblock content %}
