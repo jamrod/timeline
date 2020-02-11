@@ -1,9 +1,13 @@
 {% extends 'timeline/base.html' %} {% block content %}
 <h2>Timeline by {{timeline.author }}</h2>
 <ul>
+  <a href={% url 'capsule_create' %}>Add Time Capsule</a>
   {% for capsule in timeline.time_capsules.all %}
   <li>
     <a href={% url 'capsule_detail' pk=capsule.pk %}> {{ capsule.contents }} </a>  
     </li>
 </ul>
+
+<a href ={% url 'capsule_edit' pk=timeline.id %}>Edit</a>
+<a href ={% url 'capsule_delete' pk=timeline.id %}>Delete</a>
 {% endfor %} {% endblock content %}

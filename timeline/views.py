@@ -51,6 +51,7 @@ def capsule_detail(request, pk):
 
 
 def capsule_create(request):
+    # timeline = Timeline.objects.get(id=pk)
     if request.method == 'POST':
         form = CapsuleForm(request.POST)
         if form.is_valid():
