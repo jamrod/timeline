@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
 
 from .models import Timeline, Time_Capsule
+from .forms import TimelineForm, CapsuleForm
+
 
 def timeline_list(request):
     timeline = Timeline.objects.all()
     return render(request, 'timeline/timeline_list.html', {'timelines': timeline})
 
+
 def timeline_detail(request, pk):
     timeline = Timeline.objects.get(id=pk)
     return render(request, 'timeline/timeline_detail.html', {'timeline': timeline})
+
 
 def timeline_create(request):
     if request.method == 'POST':
@@ -20,8 +24,9 @@ def timeline_create(request):
         form = TimelineForm()
     return render(request, 'timeline/timeline_form.html', {'form': form})
 
+
 def timeline_edit(request, pk):
-    timeline = Timeline.objects.get(id-pk)
+    timeline = Timeline.objects.get(id=pk)
     if request.method == 'POST':
         form = TimelineForm(request.POST, instance=timeline)
         if form.is_valid():
@@ -31,17 +36,21 @@ def timeline_edit(request, pk):
         form = TimelineForm(instance=timeline)
     return render(request, 'timeline/timeline_form.html', {'form': form})
 
-def _delete(request, pk):
+
+def timeline_delete(request, pk):
     Timeline.objects.get(id=pk).delete()
     return redirect('timeline_list')
+
 
 def capsule_list(request):
     capsule = Time_Capsule.objects.all()
     return render(request, 'timeline/capsule_list.html', {'capsules': capsule})
 
+
 def capsule_detail(request, pk):
-    capsule= Time_Capsule.objects.get(id=pk)
+    capsule = Time_Capsule.objects.get(id=pk)
     return render(request, 'timeline/capsule_detail.html', {'capsule': capsule})
+
 
 def capsule_create(request):
     if request.method == 'POST':
@@ -53,8 +62,9 @@ def capsule_create(request):
         form = CapsuleForm()
     return render(request, 'timeline/capsule_form.html', {'form': form})
 
+
 def capsule_edit(request, pk):
-    capsule = Time_Capsule.objects.get(id-pk)
+    capsule = Time_Capsule.objects.get(id=pk)
     if request.method == 'POST':
         form = CapsuleForm(request.POST, instance=capsule)
         if form.is_valid():
@@ -63,6 +73,7 @@ def capsule_edit(request, pk):
     else:
         form = CapsuleForm(instance=capsule)
     return render(request, 'timeline/capsule_form.html', {'form': form})
+
 
 def capsule_delete(request, pk):
     capsule = Time_Capsule.objects.get(id=pk)

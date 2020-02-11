@@ -1,5 +1,12 @@
 {% extends 'timeline/base.html' %}
 
 {% block content %}
-<h1>Timelines</h1>
+<h2>Timelines</h2>
+<ul>
+{% for timeline in timlines %}
+<li>
+    <a href={% url 'timeline_detail' pk=timeline.pk %}>{{ timeline.author }}</a>
+</li>
+{% endfor %}
+</ul>
 {% endblock content %}
