@@ -1,10 +1,10 @@
-{% extends 'timeline/base.html' %} 
+{% extends 'timeline/base.html' %} {% block content %}
 
-{% block content %}
-
-<h2>{{ song.title }} <a href="{% url 'capsule_edit' pk=capsule.pk %}">EDIT</a></h2>
+<h2>
+  {{ capsule.contents }}
+  <a href="{% url 'capsule_edit' pk=capsule.pk %}">EDIT</a>
+</h2>
 <h3>{{ capsule.timeline.author }}</h3>
-
 
 <div>
   <a href="{% url 'capsule_delete' pk=capsule.pk %}">DELETE</a>
