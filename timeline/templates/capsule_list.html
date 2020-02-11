@@ -1,0 +1,11 @@
+{% extends 'timeline/base.html' %}
+
+{% block content %}
+<ul>
+    {% for capsule in capsules %}
+        <li>
+            <a href="{% url 'capsule_detail' pk=capsule.pk %}">{{ timeline.capsule }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
