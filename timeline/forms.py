@@ -1,20 +1,22 @@
 from django import forms
 from .models import Timeline, Time_Capsule
 
-class TimelineForm(models.Model):
+
+class TimelineForm(forms.ModelForm):
 
     def __str__(self):
         pass
 
     class Meta:
         model = Timeline
-        fields = ('author')
+        fields = ('author',)
 
-class CapsuleForm(models.Model):
+
+class CapsuleForm(forms.ModelForm):
 
     def __str__(self):
         pass
 
     class Meta:
         model = Time_Capsule
-        managed = ('timeline', 'timestamp', 'contents')
+        fields = ('timeline', 'contents',)
