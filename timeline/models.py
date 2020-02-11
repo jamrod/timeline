@@ -17,4 +17,4 @@ class Time_Capsule(models.Model):
     contents = models.TextField(default='')
 
     def __str__(self):
-        return self.contents + str(self.created_on)
+        return str(self.created_on)
