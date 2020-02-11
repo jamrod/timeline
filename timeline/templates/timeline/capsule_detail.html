@@ -5,7 +5,7 @@
   <a href="{% url 'capsule_edit' pk=capsule.pk %}">EDIT</a>
 </h2>
 <h3>{{ capsule.timeline.author }}</h3>
-
+<p>{{ capsule.created_on|date:'Y-m-d H:i' }}</p>
 <div>
   <a href="{% url 'capsule_delete' pk=capsule.pk %}">DELETE</a>
 </div>
