@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Timeline, Time_Capsule, Timestamp
+
+admin.site.register(Timeline)
+admin.site.register(Time_Capsule)
+admin.site.register(Timestamp)
