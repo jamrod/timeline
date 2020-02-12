@@ -6,7 +6,6 @@ Timeline is an app that takes *time capsules* to record your thoughts, memories,
 
 Timeline has full CRUD functionality for creating *timelines* and *time capsules* that populate them. These can be created, read, updated, and deleted by the users. Once created, they display in chronological order based upon their creation date. 
 
-
 ### Technologies
 Built with Python, using the Django framework with Postgresql for the database.
 
@@ -65,8 +64,6 @@ class Time_Capsule(models.Model):
     def __str__(self):
         return self.contents + str(self.created_on)
 ```
-
-
 
 ## Issues and Resolutions
 We ran into an issue with the timestamp that prevent the content from rendering at certain levels, The error presented was an issue with the timestamp not being a string. 
