@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Timeline, Time_Capsule
 from .forms import TimelineForm, CapsuleForm
 
+
 def timeline_list(request):
     timeline = Timeline.objects.all()
     return render(request, 'timeline/timeline_list.html', {'timelines': timeline})
@@ -30,10 +31,11 @@ def timeline_edit(request, pk):
         form = TimelineForm(request.POST, instance=timeline)
         if form.is_valid():
             timeline = form.save()
-            return redirect('artist_detail', {'form': form})
+            return redirect('timeline_detail', pk=timeline.id)
     else:
         form = TimelineForm(instance=timeline)
-    return render(request, 'timeline/timeline_form.html', pk=timeline.id)
+    return render(request, 'timeline/timeline_form.html', {'form': form})
+
 
 def timeline_delete(request, pk):
     Timeline.objects.get(id=pk).delete()
