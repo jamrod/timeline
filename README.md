@@ -10,10 +10,10 @@ Timeline has full CRUD functionality for creating *timelines* and *time capsules
 Built with Python, using the Django framework with Postgresql for the database.
 
 #### Dependencies
--[Python 3](https://docs.python.org/3/)
--[Django](https://docs.djangoproject.com/en/3.0/)
--[Postgresql](https://www.postgresql.org/docs/)
--[psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
+- [Python 3](https://docs.python.org/3/)
+- [Django](https://docs.djangoproject.com/en/3.0/)
+- [Postgresql](https://www.postgresql.org/docs/)
+- [psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
 
 ### MVP/PostMVP
 
