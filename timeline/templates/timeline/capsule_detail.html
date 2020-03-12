@@ -3,6 +3,14 @@
 <h2>
   {{ capsule.contents }}
 </h2>
+<!-- <img> -->
+<img src="{{ capsule.image }}" alt="" class="capsule-photo" />
+
+    <iframe width="560" height="315" src="{{ capsule.video }}" frameborder="0" allowfullscreen></iframe>
+    </iframe>
+
+
+<h2><a href="{{capsule.useful_links}}" target="_blank">{{ capsule.contents }}</a></h2>
 <a href="{% url 'capsule_edit' pk=capsule.pk %}">EDIT</a>
 <h3>By: {{ capsule.timeline.author }}</h3>
 <p>

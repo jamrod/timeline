@@ -11,10 +11,10 @@ class TimelineForm(forms.ModelForm):
         fields = ('author',)
 
 class CapsuleForm(forms.ModelForm):
-
-    def __str__(self):
-        pass
+    
 
     class Meta:
         model = Time_Capsule
-        fields = ('timeline', 'contents',)
+        # exclude = ('timeline',)
+        # fields = ( 'contents','image', 'video', 'useful_links',)
+        fields = ( 'timeline', 'contents','image', 'video', 'useful_links',)
